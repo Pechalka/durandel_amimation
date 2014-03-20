@@ -1,0 +1,20 @@
+{
+  "name": "durandel_animation",
+  "version": "0.0.0",
+  "authors": [
+    "Andrew <luzkovskyandrey@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "durandal": "~2.0.1",
+    "animate.css": "~3.1.0"
+  }
+}
