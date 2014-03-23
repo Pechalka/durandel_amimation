@@ -1,5 +1,6 @@
   define(['durandal/system', 'jquery'], function (system, $) {
 
+
     return App = {
         duration: 1000 * .35, // seconds
         create: function (settings) {
@@ -31,6 +32,13 @@
           $previousView,
           $newView = $(newChild).removeClass(outAn); // just need to remove outAn here, keeping the animated class so we don't get a "flash"
 
+
+      function scrollIfNeeded() {
+                if (!settings.keepScrollPosition) {
+                    $(document).scrollTop(0);
+                }
+            }
+            
         return system.defer(function (dfd) {
             if (newChild) {
 
@@ -57,6 +65,9 @@
                 if ($previousView) {
                     $previousView.css('display', 'none');
                 }
+                
+                scrollIfNeeded();
+
                 settings.triggerAttach();
 
                 $newView.addClass('animated');  //moved the adding of the animated class here so it keeps it together

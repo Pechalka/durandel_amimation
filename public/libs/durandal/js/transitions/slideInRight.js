@@ -1,5 +1,6 @@
 define(function(require) {
     var helper = require('./transitionHelper');
+    var system = require('durandal/system');
 
     var settings = {
         inAnimation: 'fadeInLeftBig',
@@ -13,5 +14,10 @@ define(function(require) {
         }
     };
 
-    return helper.create(settings);
+fadeIn = function(context) {
+            system.extend(context, settings);
+            return helper.create(context);
+        };
+
+    return fadeIn;
 });
